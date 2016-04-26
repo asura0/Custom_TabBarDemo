@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^success)();
+typedef void (^layoutConrnerRadius)(BOOL isImage, BOOL isSelectedImage);
+
+
 @interface TabBarButton : UIButton
 
 /**
@@ -32,5 +36,10 @@
  *  @param title            标签按钮的标题 (可以为 nil)
  */
 - (void)updateImage:(NSString *)image selectedImage:(NSString *)selectedImage placeholderImage:(NSString *)placeholderImage title:(NSString *)title;
+
+
+@property (nonatomic, copy) success successBlock;
+@property (nonatomic, copy) layoutConrnerRadius conrnerRadiusBlock ;
+
 
 @end

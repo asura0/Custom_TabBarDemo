@@ -14,6 +14,8 @@
 #import "MiddleViewController.h"
 #import "CustomTarBar.h"
 
+#import <AdSupport/AdSupport.h>
+
 @interface TabBarViewController ()
 
 //控制器的容器的数组
@@ -33,10 +35,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+//    NSString *adId = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+
+    
     self.tabBarViewControllers = [NSMutableArray array];
 
-    //标题的数组
-    self.titleArray = [@[@"首页",@"网购",@"相机",@"邮件",@"我的"]mutableCopy];
     
     NSArray *VCArray = @[@"ViewController",@"FistViewController",@"SecondViewController",@"ThirdViewController"];
     
@@ -44,15 +47,21 @@
         [self addNewController:VCString];
     }
     
-    NSMutableArray *imageArray = [@[@"fistpage-1",@"shoping-1",@"photo-1",@"email-1",@"myself-2"]mutableCopy];
+    //标题的数组
+    self.titleArray = [@[@"首页",@"网购",@"相机",@"我的"]mutableCopy];
     
-    NSMutableArray *selectedImageArray = [@[@"fistpage-2",@"shoping-2",@"photo-2",@"email-2",@"myself-2"]mutableCopy];
+    NSMutableArray *imageArray = [@[@"fistpage-1",@"shoping-1",@"photo-1",@"myself-2"]mutableCopy];
     
-    NSMutableArray *array = [@[imageArray,selectedImageArray]mutableCopy];
+    NSMutableArray *selectedImageArray = [@[@"fistpage-2",@"shoping-2",@"photo-2",@"myself-2"]mutableCopy];
+    //icon 数组
+    NSMutableArray *iamgeArray = [@[imageArray,selectedImageArray]mutableCopy];
     
+    //占位图片
+    NSMutableArray *placholeImages = [@[@"fistpage-1",@"shoping-1",@"photo-1",@"myself-2"]mutableCopy];
 
+    
     //自定义赋值
-    self.custTarBar = [[CustomTarBar alloc]initWithMarkCount:5 markImageArray:array placeholderImageArray:nil markTitleArray: self.titleArray];
+    self.custTarBar = [[CustomTarBar alloc]initWithMarkCount:4 markImageArray:iamgeArray placeholderImageArray:placholeImages markTitleArray: nil];
     
     [self setValue:_custTarBar forKey:@"tabBar"];
     
@@ -65,15 +74,16 @@
     };
     
     //模拟更新图片
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [imageArray removeLastObject];
-        [imageArray addObject:@"http://banbao.chazidian.com/uploadfile/2016-01-25/s145368924044608.jpg"];
+        [imageArray addObject:@"http://c.hiphotos.baidu.com/zhidao/pic/item/d50735fae6cd7b893ca44ea60e2442a7d8330ece.jpg"];
         [selectedImageArray removeLastObject];
-        [selectedImageArray addObject:@"http://banbao.chazidian.com/uploadfile/2016-01-25/s145368924044608.jpg"];
+        [selectedImageArray addObject:@"http://c.hiphotos.baidu.com/zhidao/pic/item/d50735fae6cd7b893ca44ea60e2442a7d8330ece.jpg"];
         NSMutableArray *array = [@[imageArray,selectedImageArray]mutableCopy];
-        [self.custTarBar updateMarkImageArray:array placeholderImageArray:nil markTitleArray:self.titleArray];
+        [self.custTarBar updateMarkImageArray:array placeholderImageArray:nil markTitleArray:nil];
+        [self.custTarBar cornerRadiusMarkIndexArray:@[@"3"]];
+
     });
-    
 }
 
 #pragma mark -添加控制器

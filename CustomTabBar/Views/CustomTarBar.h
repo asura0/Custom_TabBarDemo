@@ -34,5 +34,12 @@ typedef void(^handleActionBlock)(UIButton *button);
  *  @param markTitleArray        更新标题数组(可以为nil, nil时图片自动铺满)
  */
 - (void)updateMarkImageArray:(NSArray *)markImageArray placeholderImageArray:(NSArray *)placeholderImageArray markTitleArray:(NSArray *)markTitleArray;
+/**
+ *  asura 2016-4-21
+ *
+ *  @param indexArray 要切圆的下标数组(该数组的个数不能大于标签的个数)
+ */
+- (void)cornerRadiusMarkIndexArray:(NSArray *)indexArray;
+
 
 @end

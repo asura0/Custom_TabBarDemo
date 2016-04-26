@@ -17,8 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.tabBarItem.image = [[UIImage imageNamed:@"fistpage-1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    self.tabBarItem.selectedImage = [[UIImage imageNamed:@"fistpage-2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    UIViewController *viewVC = [[UIViewController alloc]init];
+    viewVC.view.backgroundColor = [UIColor whiteColor];
+    viewVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:viewVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
