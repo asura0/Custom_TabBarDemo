@@ -7,10 +7,11 @@
 //
 
 #import "CustomTarBar.h"
-#import "TabBarButton.h"
 
+#define SCREEN_S [UIScreen mainScreen].bounds
 #define SCREENWIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREENHEIGHT [UIScreen mainScreen].bounds.size.height
+
 #define kTabBarHeight 49
 #define kSpacing 5
 
@@ -28,8 +29,6 @@
     UIVisualEffectView *_effectView;
     UIView *_effectBadgroundView;
 }
-//存放 button的数组
-@property (nonatomic, strong) NSMutableArray *buttonsArray;
 
 @end
 

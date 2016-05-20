@@ -7,12 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TabBarButton.h"
+
 
 typedef void(^handleActionBlock)(UIButton *button);
 
 @interface CustomTarBar : UITabBar
 
 @property (nonatomic, copy) handleActionBlock handleBlock;
+
+//存放 button的数组
+@property (nonatomic, strong) NSMutableArray *buttonsArray;
 
 /**
  *  asura 2016-4-21

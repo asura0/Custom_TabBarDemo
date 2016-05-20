@@ -14,6 +14,9 @@ typedef void (^layoutConrnerRadius)(BOOL isImage, BOOL isSelectedImage);
 
 @interface TabBarButton : UIButton
 
+//角标
+@property (nonatomic, copy) NSString *bageValueLabelText;
+
 /**
  *  asura 2016-4-21
  *
@@ -39,7 +42,7 @@ typedef void (^layoutConrnerRadius)(BOOL isImage, BOOL isSelectedImage);
 
 
 @property (nonatomic, copy) success successBlock;
-@property (nonatomic, copy) layoutConrnerRadius conrnerRadiusBlock ;
+@property (nonatomic, copy) layoutConrnerRadius conrnerRadiusBlock;
 
 
 @end

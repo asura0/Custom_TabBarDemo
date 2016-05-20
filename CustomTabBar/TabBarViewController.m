@@ -84,6 +84,8 @@
         [self.custTarBar cornerRadiusMarkIndexArray:@[@"3"]];
 
     });
+    
+    ((TabBarButton *)self.custTarBar.buttonsArray.firstObject).bageValueLabelText = @"22";
 }
 
 #pragma mark -添加控制器

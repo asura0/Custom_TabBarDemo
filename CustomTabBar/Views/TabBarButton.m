@@ -21,6 +21,7 @@
     BOOL _resultImage;//是否是地址的标示
     BOOL _resultImageto;
     NSString *_saveFile;//缓存路径
+    UILabel *_bageValueLabel;//角标
 }
 
 @property (nonatomic, assign) float saveSize;//缓存大小
@@ -45,6 +46,7 @@
     _saveFile = [self getDoucmentPathFile];
     [self getSize];
     [self confgureImage:image selectedImage:selectedImage placeholderImage:placeholderImage];
+    [self confgureBageValue];
     return self;
 }
 
@@ -79,6 +81,37 @@
     self.titleLabel.frame = CGRectMake(0, self.frame.size.height * 3 / 4 - 2, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds) / 4);
     self.titleLabel.font = [UIFont systemFontOfSize:10];
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
+}
+
+- (void)confgureBageValue{
+    _bageValueLabel = [[UILabel alloc]init];
+    _bageValueLabel.textColor = [UIColor whiteColor];
+    _bageValueLabel.font = [UIFont systemFontOfSize:10];
+    _bageValueLabel.textAlignment = NSTextAlignmentCenter;
+    _bageValueLabel.frame = CGRectMake(CGRectGetMaxX(self.imageView.frame) - 10, CGRectGetMinY(self.imageView.frame), 20,15);
+    _bageValueLabel.layer.cornerRadius = 8;
+    _bageValueLabel.layer.masksToBounds = YES;
+    _bageValueLabel.backgroundColor = [UIColor redColor];
+    _bageValueLabel.hidden = YES;
+    [self addSubview:_bageValueLabel];
+    
+    [self addObserver:self forKeyPath:@"bageValueLabelText" options:NSKeyValueObservingOptionNew context:nil];
+}
+
+#pragma mark - observe @"bageValueLabel.text"
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
+    
+    NSString *newText = change[NSKeyValueChangeNewKey];
+    if ([newText isEqual:[NSNull null]]) {
+        _bageValueLabel.hidden = YES;
+        return;
+    }
+    if (newText == nil || [newText isEqualToString:@""]) {
+        _bageValueLabel.hidden = YES;
+    }else{
+        _bageValueLabel.hidden = NO;
+        _bageValueLabel.text = self.bageValueLabelText;
+    }
 }
 
 #pragma mark -network

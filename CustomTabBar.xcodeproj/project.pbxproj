@@ -25,8 +25,8 @@
 		8D9C5AA71CC873BF0079049D /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D9C5AA51CC873BF0079049D /* SecondViewController.xib */; };
 		8D9C5AAB1CC873F30079049D /* MiddleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D9C5AA91CC873F30079049D /* MiddleViewController.m */; };
 		8D9C5AAC1CC873F30079049D /* MiddleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D9C5AAA1CC873F30079049D /* MiddleViewController.xib */; };
-		8DEAB8FA1CC89478007E8432 /* CustomTarBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEAB8F91CC89478007E8432 /* CustomTarBar.m */; };
-		8DEAB8FD1CC8A9A0007E8432 /* TabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEAB8FC1CC8A9A0007E8432 /* TabBarButton.m */; };
+		8DC198861CEF20CE006290A8 /* CustomTarBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DC198821CEF20CE006290A8 /* CustomTarBar.m */; };
+		8DC198871CEF20CE006290A8 /* TabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DC198841CEF20CE006290A8 /* TabBarButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,10 +78,10 @@
 		8D9C5AA81CC873F30079049D /* MiddleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiddleViewController.h; sourceTree = "<group>"; };
 		8D9C5AA91CC873F30079049D /* MiddleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiddleViewController.m; sourceTree = "<group>"; };
 		8D9C5AAA1CC873F30079049D /* MiddleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MiddleViewController.xib; sourceTree = "<group>"; };
-		8DEAB8F81CC89478007E8432 /* CustomTarBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTarBar.h; sourceTree = "<group>"; };
-		8DEAB8F91CC89478007E8432 /* CustomTarBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTarBar.m; sourceTree = "<group>"; };
-		8DEAB8FB1CC8A9A0007E8432 /* TabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarButton.h; sourceTree = "<group>"; };
-		8DEAB8FC1CC8A9A0007E8432 /* TabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarButton.m; sourceTree = "<group>"; };
+		8DC198811CEF20CE006290A8 /* CustomTarBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTarBar.h; sourceTree = "<group>"; };
+		8DC198821CEF20CE006290A8 /* CustomTarBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTarBar.m; sourceTree = "<group>"; };
+		8DC198831CEF20CE006290A8 /* TabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarButton.h; sourceTree = "<group>"; };
+		8DC198841CEF20CE006290A8 /* TabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,10 +172,10 @@
 		8D9C5A971CC86A3B0079049D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8DEAB8F81CC89478007E8432 /* CustomTarBar.h */,
-				8DEAB8F91CC89478007E8432 /* CustomTarBar.m */,
-				8DEAB8FB1CC8A9A0007E8432 /* TabBarButton.h */,
-				8DEAB8FC1CC8A9A0007E8432 /* TabBarButton.m */,
+				8DC198811CEF20CE006290A8 /* CustomTarBar.h */,
+				8DC198821CEF20CE006290A8 /* CustomTarBar.m */,
+				8DC198831CEF20CE006290A8 /* TabBarButton.h */,
+				8DC198841CEF20CE006290A8 /* TabBarButton.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -352,11 +352,11 @@
 				8D9C5A8F1CC869C00079049D /* TabBarViewController.m in Sources */,
 				8D9C5A621CC868BB0079049D /* ViewController.m in Sources */,
 				8D9C5AA11CC8737F0079049D /* ThirdViewController.m in Sources */,
-				8DEAB8FA1CC89478007E8432 /* CustomTarBar.m in Sources */,
+				8DC198861CEF20CE006290A8 /* CustomTarBar.m in Sources */,
 				8D9C5AA61CC873BF0079049D /* SecondViewController.m in Sources */,
 				8D9C5A5F1CC868BB0079049D /* AppDelegate.m in Sources */,
 				8D9C5A5C1CC868BB0079049D /* main.m in Sources */,
-				8DEAB8FD1CC8A9A0007E8432 /* TabBarButton.m in Sources */,
+				8DC198871CEF20CE006290A8 /* TabBarButton.m in Sources */,
 				8D9C5A931CC86A050079049D /* FistViewController.m in Sources */,
 				8D9C5AAB1CC873F30079049D /* MiddleViewController.m in Sources */,
 			);
