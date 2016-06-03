@@ -28,7 +28,7 @@ typedef void (^layoutConrnerRadius)(BOOL isImage, BOOL isSelectedImage);
  *
  *  @return TabBarButton class
  */
-- (instancetype)initWithFrame:(CGRect)frame image:(NSString *)image selectedImage:(NSString *)selectedImage placeholderImage:(NSString *)placeholderImage title:(NSString *)title;
+- (instancetype)initWithFrame:(CGRect)frame image:(id)image selectedImage:(id)selectedImage placeholderImage:(id)placeholderImage title:(NSString *)title;
 
 /**
  *  asura 2016-4-21
@@ -38,7 +38,7 @@ typedef void (^layoutConrnerRadius)(BOOL isImage, BOOL isSelectedImage);
  *  @param placeholderImage 占位图片(现只支持名字)
  *  @param title            标签按钮的标题 (可以为 nil)
  */
-- (void)updateImage:(NSString *)image selectedImage:(NSString *)selectedImage placeholderImage:(NSString *)placeholderImage title:(NSString *)title;
+- (void)updateImage:(id)image selectedImage:(id)selectedImage placeholderImage:(id)placeholderImage title:(NSString *)title;
 
 
 @property (nonatomic, copy) success successBlock;

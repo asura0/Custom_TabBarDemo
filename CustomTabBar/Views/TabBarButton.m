@@ -40,7 +40,7 @@
 
 #pragma  mark -tabbar
 //实例
-- (instancetype)initWithFrame:(CGRect)frame image:(NSString *)image selectedImage:(NSString *)selectedImage placeholderImage:(NSString *)placeholderImage title:(NSString *)title{
+- (instancetype)initWithFrame:(CGRect)frame image:(id)image selectedImage:(id)selectedImage placeholderImage:(id)placeholderImage title:(NSString *)title{
     self = [[TabBarButton alloc]initWithFrame:frame];
     _title = title;
     _saveFile = [self getDoucmentPathFile];
@@ -51,7 +51,7 @@
 }
 
 //更新
-- (void)updateImage:(NSString *)image selectedImage:(NSString *)selectedImage placeholderImage:(NSString *)placeholderImage title:(NSString *)title{
+- (void)updateImage:(id)image selectedImage:(id)selectedImage placeholderImage:(id)placeholderImage title:(NSString *)title{
     _title = title;
     [self confgureImage:image selectedImage:selectedImage placeholderImage:placeholderImage];
 }
@@ -116,10 +116,12 @@
 
 #pragma mark -network
 //配置标签按钮
-- (void)confgureImage:(NSString *)image selectedImage:(NSString *)selectedImage placeholderImage:(NSString *)placeholderImage{
+- (void)confgureImage:(id)image selectedImage:(id)selectedImage placeholderImage:(id)placeholderImage{
     
-    _resultImage = [image hasPrefix:@"http://"];
-    _resultImageto = [image hasPrefix:@"https://"];
+    if ([image isKindOfClass:[NSString class]] && [image isKindOfClass:[NSString class]]) {
+        _resultImage = [image hasPrefix:@"http://"];
+        _resultImageto = [image hasPrefix:@"https://"];
+    }
     
     if (placeholderImage != nil) {
         _image = [UIImage imageNamed:placeholderImage];
@@ -128,11 +130,25 @@
     
     if (!_resultImage && !_resultImageto) {
         if (image != nil) {
-            _image = [UIImage imageNamed:image];
+            
+            if ([image isKindOfClass:[UIImage class]]) {
+                _image = image;
+            }else{
+                _image = [UIImage imageNamed:image];
+                
+            }
             [self setImage:[_image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
+            
         }
+        
         if (selectedImage != nil) {
-            _selectedImage = [UIImage imageNamed:selectedImage];
+            
+            if ([selectedImage isKindOfClass:[UIImage class]]) {
+                _selectedImage = selectedImage;
+            }else{
+                _selectedImage = [UIImage imageNamed:selectedImage];
+                
+            }
             [self setImage:[_selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateSelected];
         }
     }else{
